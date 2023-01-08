@@ -6,7 +6,7 @@ This collaborative project is a clone of the [MyHours](https://myhours.com) webs
 
 ## Deployed Site
 
-[My Hours clone](https://wonderful-dasik-3cd912.netlify.app/)
+[My Hours clone](https://my-hours-clone.netlify.app/)
 
 ## Presentation Video
 
