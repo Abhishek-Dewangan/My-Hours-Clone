@@ -68,10 +68,13 @@ export default function WithSubnavigation() {
               Logo
             </Text> */}
           <Link as={ReachLink} to={'/'} ml='2rem' width={'20%'}>
-            <img src='https://uploads-ssl.webflow.com/5c77a918ef19681741be7bca/5fd37c83dfa3ccb0d2d9836f_myhours-logo.svg' />
+            <img
+              src='https://uploads-ssl.webflow.com/5c77a918ef19681741be7bca/5fd37c83dfa3ccb0d2d9836f_myhours-logo.svg'
+              alt='MyHours'
+            />
           </Link>
 
-          <Flex display={{base: 'none', md: 'flex'}} ml={{md: '10'}}>
+          <Flex display={{base: 'none', md: 'flex'}} ml={{md: '-5em'}}>
             <DesktopNav />
           </Flex>
         </Flex>
@@ -110,7 +113,7 @@ export default function WithSubnavigation() {
 
 const DesktopNav = () => {
   return (
-    <Stack ml={{md: '17rem'}} direction={'row'} spacing={10} mt={3}>
+    <Stack ml={{md: '17rem'}} direction={'row'} spacing={8} mt={2}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Link
@@ -119,7 +122,6 @@ const DesktopNav = () => {
               textDecoration: 'none',
             }}
             to={navItem.href}
-            fontSize={'larger'}
             fontWeight={'600'}
             color={'blue.400'}
           >

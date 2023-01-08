@@ -34,14 +34,15 @@ const Sidebar = () => {
 
   const id = JSON.parse(localStorage.getItem('userid'));
   const getData = async () => {
-    const r = await axios.get(`https://my-hours.onrender.com/teamMember/user/${id}`);
+    const r = await axios.get(
+      `https://my-hours.onrender.com/teamMember/user/${id}`
+    );
     setName(r.data.name);
   };
 
   return (
     <>
       <div className={styled.sidebarmain}>
-        <div className={styled.sideberdiv1}></div>
         <div className={styled.sideberdiv2}>
           <div className={styled.icon1}>
             <BsGrid3X3GapFill
@@ -158,6 +159,7 @@ const Sidebar = () => {
                             width: '20px',
                             height: '18px',
                             marginTop: '10px',
+                            marginBottom: '100px',
                             marginLeft: '16px',
                           }}
                         />
@@ -179,10 +181,6 @@ const Sidebar = () => {
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
-          <div className={styled.pro}>
-            <p> Pro trial expires in 10 days</p>
-            <h1>Keep/Leave the Pro</h1>
-          </div>
           <div className={styled.icon2}>
             <BsQuestionCircle
               style={{
