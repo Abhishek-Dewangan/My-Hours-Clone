@@ -29,9 +29,8 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form);
     let payload = JSON.stringify(form)
-    fetch("https://masaihours.herokuapp.com/signin", {
+    fetch("https://my-hours.onrender.com/signin", {
         headers : {
             "Content-Type" : "application/json"
         },
@@ -40,16 +39,12 @@ const Signup = () => {
     })
     .then((res) => res.json())
     .then((res) => {
-        console.log(res._id)
         if(res.token){
             localStorage.setItem("userid", JSON.stringify(res._id))
             navigate("/track")
             // navigate("/all")
-
-            // console.log(res.token)
         }
         else{
-            console.log(res.message)
             alert(res.message)
         }
     })

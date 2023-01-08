@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { SettingsIcon } from '@chakra-ui/icons';
+import React, {useState} from 'react';
+import {SettingsIcon} from '@chakra-ui/icons';
 import styled from 'styled-components';
-import { Box, Button, Flex, Input, Text, Textarea } from '@chakra-ui/react';
+import {Box, Button, Flex, Input, Text, Textarea} from '@chakra-ui/react';
 
 const Label = styled.label`
   font-size: 11px;
   color: grey;
 `;
 
-export const Form = ({ setOpen, status, setStatus }) => {
+export const Form = ({setOpen, status, setStatus}) => {
   const Data = JSON.parse(localStorage.getItem('clientData')) || [];
   const [client, setClient] = useState('');
   const [task, setTask] = useState('');
@@ -18,15 +18,15 @@ export const Form = ({ setOpen, status, setStatus }) => {
     localStorage.setItem(
       'clientData',
       JSON.stringify([
-        { client: client, task: task, tags: tags, desc: desc },
+        {client: client, task: task, tags: tags, desc: desc},
         ...Data,
-      ]),
+      ])
     );
   };
   return (
     <Box textAlign='left'>
       <Text color={'#375d75'} fontSize={'23'} ml={'5'}>
-        Add a time log <SettingsIcon style={{ fontSize: '15px' }} />
+        Add a time log <SettingsIcon style={{fontSize: '15px'}} />
       </Text>
       <Flex w={'90%'} m={'auto'} mb={'5'}>
         <Box w={'65%'}>
@@ -80,7 +80,7 @@ export const Form = ({ setOpen, status, setStatus }) => {
           <Label>TIME & DATE</Label>
           <br />
           <Input type='number' placeholder='Duration' w={'120%'} m={'5px 0'} />
-          <Box style={{ display: 'flex', gap: '10px', marginRight: '-3.7em' }}>
+          <Box style={{display: 'flex', gap: '10px', marginRight: '-3.7em'}}>
             <Input type='number' placeholder='Start time' m={'5px 0'} />
             <Input type='number' placeholder='End time' m={'5px 0'} />
           </Box>
@@ -95,14 +95,15 @@ export const Form = ({ setOpen, status, setStatus }) => {
       <Flex ml={'5'} mb={'5'} gap={'5'}>
         <Button
           bg={'#29aa60'}
-          _hover={{ bg: '#007500' }}
+          _hover={{bg: '#007500'}}
           color='white'
           onClick={() => {
             handleSubmit();
             {
               status ? setStatus(false) : setStatus(true);
             }
-          }}>
+          }}
+        >
           Start Timer
         </Button>
         <Button
@@ -110,7 +111,8 @@ export const Form = ({ setOpen, status, setStatus }) => {
           onClick={() => {
             handleSubmit();
             setOpen(false);
-          }}>
+          }}
+        >
           Start & close
         </Button>
         <Button color={'#3b8fc2'} onClick={() => setOpen(false)}>

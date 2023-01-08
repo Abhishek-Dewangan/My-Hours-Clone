@@ -14,7 +14,7 @@ const NewClient = () => {
     })
   }
   const postData =async(client)=>{
-    let data = await fetch(`https://masaihours.herokuapp.com/client/clientpost`,{
+    let data = await fetch(`https://my-hours.onrender.com/client/clientpost`,{
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body:JSON.stringify(client)
@@ -29,7 +29,6 @@ const NewClient = () => {
 }
   const handleSubmit=(e)=>{
     e.preventDefault();
-    console.log(Client);
     postData(Client)
     navigate('/clients')
     

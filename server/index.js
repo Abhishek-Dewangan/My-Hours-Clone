@@ -16,13 +16,11 @@ const user = require('./Routes/user.js');
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(cors());
-//   app.use("/",clientRouter)
 //  app.use("/users",user)
 app.use('/', authRouter);
 app.use('/client', clientRouter);
 app.use('/teamMember', Team);
 
-//  app.use("/teamMemberdata",Team)
 app.get('/', (req, res) => {
   res.send('Hello world');
 });

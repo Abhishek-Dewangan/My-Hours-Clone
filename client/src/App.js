@@ -1,7 +1,7 @@
-import { Route, Routes } from 'react-router';
+import {Route, Routes} from 'react-router';
 import Homepage from './pages/Homepage/Homepage';
 import Usecase from './pages/UsecasePage/Usecase';
-import { PricingPage } from './pages/Pricing_Page/PricingPage';
+import {PricingPage} from './pages/Pricing_Page/PricingPage';
 import Signup from './pages/Signup/Signup';
 import Signin from './pages/Signin/Signin';
 import Teamdisplay from './pages/Teams/Teamdisplay';
@@ -10,8 +10,8 @@ import EditTeam from './pages/Teams/EditTeam';
 import ClientDetails from './pages/Client/ClientDetails';
 import NewClient from './pages/Client/NewClient';
 import EditClient from './pages/Client/EditClient';
-import { TrackPage } from './pages/Track_Page/TrackPage';
-import Support from "./pages/Support/Support.jsx";
+import {TrackPage} from './pages/Track_Page/TrackPage';
+import Support from './pages/Support/Support.jsx';
 
 function App() {
   return (

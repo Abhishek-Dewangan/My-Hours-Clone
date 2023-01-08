@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Button, Flex, Text, Input, Box } from '@chakra-ui/react';
-import { ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons';
-import { Stopwatch } from './Stopwatch';
-import { Form } from './Form';
+import React, {useState} from 'react';
+import {Button, Flex, Text, Input, Box} from '@chakra-ui/react';
+import {ArrowForwardIcon, ArrowBackIcon} from '@chakra-ui/icons';
+import {Stopwatch} from './Stopwatch';
+import {Form} from './Form';
 import {
   AiOutlineHome,
   AiOutlinePlus,
@@ -18,7 +18,6 @@ import Sidebar from '../sidebar/Sidebar';
 export const TrackPage = () => {
   const [status, setStatus] = useState(false);
   const Data = JSON.parse(localStorage.getItem('clientData')) || [];
-  // console.log(Data);
   const [open, setOpen] = useState(false);
   const now = new Date();
   const nows = now.toString().split(' ');
@@ -50,7 +49,8 @@ export const TrackPage = () => {
               color='#3b8fc2'
               onClick={() => {
                 open ? setOpen(false) : setOpen(true);
-              }}>
+              }}
+            >
               <AiOutlinePlus /> Add time log
             </Button>
           </Box>
@@ -80,18 +80,18 @@ export const TrackPage = () => {
                 <Box>
                   <Flex gap={'2'} color='#375D75'>
                     {!e.client ? (
-                      <AiFillEdit style={{ marginTop: '4px' }} />
+                      <AiFillEdit style={{marginTop: '4px'}} />
                     ) : (
-                      <AiFillFolderOpen style={{ marginTop: '4px' }} />
+                      <AiFillFolderOpen style={{marginTop: '4px'}} />
                     )}
-                    <Text style={!e.client ? { color: 'grey' } : {}}>
+                    <Text style={!e.client ? {color: 'grey'} : {}}>
                       {!e.client ? 'Add a Project, task or tag' : e.client}
                     </Text>
                     <Text>
                       {e.task ? (
                         <AiOutlineCheck
                           color='black'
-                          style={{ marginTop: '4px' }}
+                          style={{marginTop: '4px'}}
                         />
                       ) : (
                         ''
@@ -102,7 +102,8 @@ export const TrackPage = () => {
                       bg={'#CCE5FF'}
                       color={'#0062CC'}
                       fontSize={'12px'}
-                      p={'2px 5px'}>
+                      p={'2px 5px'}
+                    >
                       {e.tags ? e.tags : ''}
                     </Text>
                     <Text
@@ -113,19 +114,21 @@ export const TrackPage = () => {
                         Data.splice(i, 1);
                         localStorage.setItem(
                           'clientData',
-                          JSON.stringify(Data),
+                          JSON.stringify(Data)
                         );
                         {
                           status ? setStatus(false) : setStatus(true);
                         }
-                      }}>
+                      }}
+                    >
                       remove
                     </Text>
                   </Flex>
                   <Text
                     color={'#687481'}
                     textAlign={'left'}
-                    style={!e.desc ? { color: 'grey' } : {}}>
+                    style={!e.desc ? {color: 'grey'} : {}}
+                  >
                     {!e.desc ? 'Empty Description' : e.desc}
                   </Text>
                 </Box>

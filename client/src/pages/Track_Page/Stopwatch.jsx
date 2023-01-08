@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { useStopwatch } from './useStopwatch';
-import { TimeIcon, NotAllowedIcon } from '@chakra-ui/icons';
-import { Box, Button, Flex, Text } from '@chakra-ui/react';
+import React, {useState} from 'react';
+import {useStopwatch} from './useStopwatch';
+import {TimeIcon, NotAllowedIcon} from '@chakra-ui/icons';
+import {Box, Button, Flex, Text} from '@chakra-ui/react';
 
 export const Stopwatch = () => {
-  const { setStartTimer, setTime, time } = useStopwatch(0);
+  const {setStartTimer, setTime, time} = useStopwatch(0);
   const [start, setStart] = useState(false);
   return (
     <Box>
@@ -12,11 +12,12 @@ export const Stopwatch = () => {
         {start ? (
           <Button
             color='#cc5252'
-            _hover={{ bg: '#cc0000', color: 'white' }}
+            _hover={{bg: '#cc0000', color: 'white'}}
             onClick={() => {
               setStartTimer(false);
               setStart(false);
-            }}>
+            }}
+          >
             <NotAllowedIcon margin={'0.5em'} />
             Stop
           </Button>
@@ -26,11 +27,12 @@ export const Stopwatch = () => {
         <Button
           bg='#29aa60'
           color='white'
-          _hover={{ bg: '#007500' }}
+          _hover={{bg: '#007500'}}
           onClick={() => {
             setStartTimer(true);
             setStart(true);
-          }}>
+          }}
+        >
           <TimeIcon margin={'0.5em'} />
           {start ? 'Start New' : 'Start'}
         </Button>

@@ -1,4 +1,4 @@
-const { useState, useEffect } = require('react');
+const {useState, useEffect} = require('react');
 
 export const useStopwatch = (initVal) => {
   const [time, setTime] = useState(initVal);
@@ -13,5 +13,5 @@ export const useStopwatch = (initVal) => {
     } else clearInterval(interval);
     return () => clearInterval(interval);
   }, [startTimer]);
-  return { time, setStartTimer, setTime };
+  return {time, setStartTimer, setTime};
 };
